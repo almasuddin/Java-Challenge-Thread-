@@ -18,26 +18,6 @@ public class Reader {
             for (SyndEntry entry : (List<SyndEntry>) feed.getEntries()) {
                 System.out.println("Title: " + entry.getTitle());
                 System.out.println("Unique Identifier: " + entry.getUri());
-                System.out.println("Updated Date: "
-                        + entry.getUpdatedDate());
-
-                // Get the Links
-                for (SyndLinkImpl link : (List<SyndLinkImpl>) entry
-                        .getLinks()) {
-                    System.out.println("Link: " + link.getHref());
-                }
-
-                // Get the Contents
-                for (SyndContentImpl content : (List<SyndContentImpl>) entry
-                        .getContents()) {
-                    System.out.println("Content: " + content.getValue());
-                }
-
-                // Get the Categories
-                for (SyndCategoryImpl category : (List<SyndCategoryImpl>) entry
-                        .getCategories()) {
-                    System.out.println("Category: " + category.getName());
-                }
             }
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());
